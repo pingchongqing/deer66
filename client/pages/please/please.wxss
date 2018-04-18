@@ -1,0 +1,59 @@
+/* pages/please/please.wxss */
+.root {
+  background: #f1f1d3;
+  min-height: 100vh;
+}
+.head {
+  height: 45rpx;
+  background: #dede9e;
+  text-align: center;
+  color: #fff;
+  padding: 30rpx;
+}
+.form {
+  padding: 30rpx;
+  font-size: 16px;
+}
+.formgroup {
+  position: relative;
+  margin-top: 30rpx;
+}
+.formtitle {
+  color: #a6a659;
+  padding: 8rpx 0;
+}
+.forminput {
+  border: #dede9e 1px solid;
+  padding: 16rpx;
+  border-radius: 8rpx;
+  margin-top: 16rpx;
+}
+.formcheck {
+  color: #a6a659
+}
+.formtextarea {
+  border: #dede9e 1px solid;  
+  width: auto !important;
+  height: 80px;
+  padding: 16rpx;
+  border-radius: 8rpx;
+  margin-top: 16rpx;
+}
+.mapchoice {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 0;
+  top: 40%;
+}
+.hasright {
+  margin-right: 80rpx;
+}
+#myMap {
+  width: 100%;
+  height: 100vh;
+}
+.formbutton {
+  background: #a6a659;
+  color: #fff;
+}

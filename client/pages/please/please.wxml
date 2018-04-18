@@ -1,0 +1,60 @@
+<!--pages/please/please.wxml-->
+<map wx:if="{{showMap}}" id="myMap"
+  show-location longitude="{{mapInfo.longitude}}"
+  latitude="{{mapInfo.latitude}}"
+  markers="{{markers}}"
+  controls='{{controls}}'
+  bindcontroltap='controltap'
+  bindtap='mapTap' />
+<view class='root'>
+  <view class='head'>
+    <text>完善请客信息</text>
+  </view>
+  <view class='form'>
+    <form bindsubmit="formSubmit">
+      <view class='formgroup'>
+        <text class='formtitle'>时间</text>
+        <view class='formitem'>
+          <input class='forminput hasright' name='time' placeholder='选择一个时间' value='{{date}}{{time}}'></input>
+          <picker mode="date" wx:if='{{!date||time}}'
+            value="{{date}}" start="2017-09-01" end="2018-09-01" bindchange="bindDateChange">
+            <image bindtap='doShowDatePicker' class='mapchoice' src='images/time.png' />
+          </picker>
+          <picker mode="time" wx:if='{{date&&!time}}'
+            value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+            <image bindtap='doShowTimePicker' class='mapchoice' src='images/time1.png' />
+          </picker>
+        </view>
+      </view>
+      <view class='formgroup'>
+        <text class='formtitle'>地点</text>
+        <view class='formitem'>
+          <input class='forminput hasright' name='address' placeholder='输入或选择地点' value='{{formData.address}}'></input>
+          <image bindtap='doShowMap' class='mapchoice' src='images/address.png' />
+        </view>
+      </view>
+      <view class='formgroup'>
+        <text class='formtitle'>人数上限</text>
+        <view class='formitem'>
+          <input class='forminput' name='people' placeholder='最多邀请的人数' ></input>
+        </view>
+      </view>
+      <view class='formgroup'>
+        <text class='formtitle'>备注</text>
+        <view class='formitem'>
+          <textarea class='formtextarea' name='remark' value='{{remark}}'></textarea>
+        </view>
+      </view>
+      <view class='formgroup'>
+        <view class='formitem'>
+          <switch name='allowshare' />允许转发
+        </view>
+      </view>
+      <view class='formgroup'>
+        <view class='formitem formcheck'>
+          <button class='formbutton' formType="submit" bindsubmit="formSubmit">开始邀请</button>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>
